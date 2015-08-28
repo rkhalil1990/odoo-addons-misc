@@ -21,7 +21,7 @@
 #
 ##############################################################################
 
-from osv.osv import except_osv
+from openerp.exceptions import Warning
 from openerp.osv.orm import Model
 from openerp.tools.translate import _
 
@@ -35,8 +35,7 @@ class pos_session(Model):
             for po in ps.order_ids:
                 # Check if there is a partial payment
                 if po.is_partial_paid:
-                    raise except_osv(
-                        _('Error!'),
+                    raise Warning(
                         _("You cannot confirm this session, because '%s'"
                             " is in a 'draft' state with payments.\n\n"
                             "Please finish to pay this Order." % (
