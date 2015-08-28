@@ -1,6 +1,6 @@
 # Translation of OpenERP Server.
 # This file contains the translation of the following modules:
-#	* pos_keep_draft_orders
+#	* pos_slate
 #
 msgid ""
 msgstr ""
@@ -15,37 +15,37 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
 
-#. module: pos_keep_draft_orders
+#. module: pos_slate
 #: field:pos.config,allow_slate:0
 msgid "Allow Slate"
 msgstr "Autoriser les ardoises"
 
-#. module: pos_keep_draft_orders
-#: code:addons/pos_keep_draft_orders/model/pos_session.py:43
+#. module: pos_slate
+#: code:addons/pos_slate/model/pos_session.py:43
 #, python-format
 msgid "Error!"
 msgstr "Erreur !"
 
-#. module: pos_keep_draft_orders
+#. module: pos_slate
 #: help:pos.config,allow_slate:0
 msgid "If you check this field, users will have the possibility to let some PoS orders in the slate, and allow the customer to paid later.\n"
 "Order in the slate will not generate entries during the close of the session."
 msgstr "Si vous cochez cette case, les utilisateurs auront la possibilité de laisser certaines vente en ardoise, et autorisera le client à payer plus tard.\n les ventes en ardoise ne génère pas d'écriture lors de la fermeture de la session."
 
-#. module: pos_keep_draft_orders
+#. module: pos_slate
 #: field:pos.order,is_partial_paid:0
 msgid "Is Partially Paid"
 msgstr "Est partiellement payé"
 
-#. module: pos_keep_draft_orders
+#. module: pos_slate
 #: code:_description:0
-#: model:ir.model,name:pos_keep_draft_orders.model_pos_order
+#: model:ir.model,name:pos_slate.model_pos_order
 #, python-format
 msgid "Point of Sale"
 msgstr "Point de Vente"
 
-#. module: pos_keep_draft_orders
-#: code:addons/pos_keep_draft_orders/model/pos_session.py:46
+#. module: pos_slate
+#: code:addons/pos_slate/model/pos_session.py:46
 #, python-format
 msgid "You cannot confirm this session, because '%s' is in a 'draft' state with payments.\n"
 "\n"

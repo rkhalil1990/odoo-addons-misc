@@ -21,8 +21,8 @@
 ##############################################################################
 
 
-from . import test_pos_keep_draft_orders
+from . import tests
 
 fast_suite = [
-    test_pos_keep_draft_orders,
+    tests,
 ]
