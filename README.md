@@ -1,3 +1,4 @@
+[![Licence](https://img.shields.io/badge/licence-AGPL--3-blue.svg)](http://www.gnu.org/licenses/agpl-3.0-standalone.html)
 [![Build Status](https://travis-ci.org/grap/odoo-addons-misc.svg?branch=8.0)](https://travis-ci.org/grap/odoo-addons-misc)
 [![Coverage Status](https://coveralls.io/repos/grap/odoo-addons-misc/badge.svg?branch=8.0&service=github)](https://coveralls.io/github/grap/odoo-addons-misc?branch=8.0)
 [![Code Climate](https://codeclimate.com/github/grap/odoo-addons-misc/badges/gpa.svg)](https://codeclimate.com/github/grap/odoo-addons-misc)
