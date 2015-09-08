@@ -28,5 +28,11 @@ More information: [Web Site](http://www.grap.coop)
 GRAP is using Odoo since 2012 and contributes to
 [OCA](https://odoo-community.org/)
 
-
+Pending Pull Request to OCA
+---------------------------
+* 15/06/2015 : account-fiscal-rule: [product_taxes_group](https://github.com/OCA/account-fiscal-rule/pull/24)
+* 31/08/2015 : account-invoicing: [account_invoice_pricelist](https://github.com/OCA/account-invoicing/pull/99)
+* xx/xx/xxxx : pos: [pos_change_payment]
+* xx/xx/xxxx : pos: [pos_invoicing]
+* xx/xx/xxxx : product-attribute: [product_standard_price_vat_incl]
 
