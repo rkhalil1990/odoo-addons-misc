@@ -14,19 +14,13 @@ python:
 
 env:
   - VERSION="8.0" LINT_CHECK="1"
-  - VERSION="7.0" ODOO_REPO="odoo/odoo" LINT_CHECK="0"
-  - VERSION="7.0" ODOO_REPO="OCA/OCB" LINT_CHECK="0"
-  - VERSION="7.0" UNIT_TEST="1" LINT_CHECK="0"
+  - VERSION="8.0" ODOO_REPO="odoo/odoo" LINT_CHECK="0"
+  - VERSION="8.0" ODOO_REPO="OCA/OCB" LINT_CHECK="0"
+  - VERSION="8.0" UNIT_TEST="1" LINT_CHECK="0"
 
 virtualenv:
   system_site_packages: true
 
-#before_install:
-#  - sudo pip install GitPython bzr
-#  - sudo apt-get install bzr
-#  - sudo pip install cairosvg
-#  - sudo pip install barcode    # FIXME bad version of barcode in pip
-#  - sudo apt-get install wkhtmltopdf
 
 install:
     # Generic OCA lines
@@ -35,11 +29,8 @@ install:
   - travis_install_nightly
   - printf '[options]\n\nrunning_env = dev' > ${HOME}/.openerp_serverrc
   - ln -s server_environment_files_sample ./server_environment_files
+
     # Custom Lines
-#  - git clone https://github.com/OCA/web.git $HOME/web -b 7.0
-#  - git clone https://github.com/OCA/pos.git $HOME/pos -b 7.0
-#  - git clone https://github.com/OCA/l10n-france.git $HOME/l10n-france -b 7.0
-#  - git clone https://github.com/OCA/sale-workflow.git $HOME/sale-workflow -b 7.0
 
 script:
   - travis_run_tests
