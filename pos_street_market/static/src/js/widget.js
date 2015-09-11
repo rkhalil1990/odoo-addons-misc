@@ -79,6 +79,7 @@ Define : pos_street_market.SelectMarketPlacePopupWidget
             this.$('#market-place-empty').click(function () {
                 self.pos.current_market_place_id = false;
                 self.pos_widget.$('#button_select_market_place')[0].innerHTML = _t('Market Place');
+                self.pos_widget.$('#button_select_market_place').removeClass('selected');
                 self.pos_widget.screen_selector.close_popup();
             });
         },
@@ -108,6 +109,7 @@ Define : pos_street_market.MarketPlaceListScreenWidget
                 });
                 market_place_widget.appendTo(this.$('.market-place-widget-list'));
             }
+
         },
     });
 
@@ -131,6 +133,7 @@ Define : pos_street_market.MarketPlaceWidget
             $("a", this.$el).click(function(e){
                 self.pos.current_market_place_id = self.model.id;
                 self.pos_widget.$('#button_select_market_place')[0].innerHTML = self.model.code;
+                self.pos_widget.$('#button_select_market_place').addClass('selected');
                 self.pos_widget.screen_selector.close_popup();
             });
         },

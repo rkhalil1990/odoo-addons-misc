@@ -13,8 +13,8 @@
         <div class="modal-dialog">
             <div class="popup popup-select-market-place">
                 <div class="market-place-header">
-                    <div id="market-place-title">
-                        Market Place Selection
+                    <div>
+                        Market Places
                     </div>
                     <div id="market-place-empty" class="button">
                         Let Empty
@@ -42,8 +42,8 @@
     <!-- Define 'MarketPlaceWidget' -->
     <t t-name="MarketPlaceWidget">
         <li class='market-place'>
-            <a href="#">
-                <t t-esc="widget.model.code"/> -
+            <a href="#" class='market-place'>
+                <t t-esc="widget.model.code"/><br />
                 <t t-esc="widget.model.name"/>
             </a>
         </li>
