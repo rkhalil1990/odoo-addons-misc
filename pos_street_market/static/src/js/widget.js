@@ -32,13 +32,25 @@ Overload: point_of_sale.PosWidget
         /* Overload Section */
         build_widgets: function(){
             this._super();
+
+            var self = this;
+
+            // Create new PopUp
             this.select_market_place_popup = new module.SelectMarketPlacePopupWidget(this, {});
             this.select_market_place_popup.appendTo($(this.$el));
-            this.screen_selector.popup_set['select-market-place-popup'] = this.select_market_place_popup;
-            // Hide the popup because all pop up are displayed at the
-            // beginning by default
+
+            // Hide the popup because all new PopUp are displayed by default
             this.select_market_place_popup.hide();
+
+            // Add the New PopUp to the screen selector
+            this.screen_selector.popup_set['select-market-place-popup'] = this.select_market_place_popup;
+
+            // Add On click behaviour to display the PopUp
+            this.$('#button_select_market_place').click(function () {
+                self.screen_selector.show_popup('select-market-place-popup');
+            })
         },
+
     });
 
 /* ****************************************************************************
@@ -51,6 +63,17 @@ Define : pos_street_market.SelectMarketPlacePopupWidget
 
     module.SelectMarketPlacePopupWidget = module.PopUpWidget.extend({
         template:'SelectMarketPlacePopupWidget',
+
+//        /* Overload Section */
+        start: function(){
+            this._super();
+            var self = this;
+            // Add On click behaviour to hide the PopUp
+            this.$('#market-place-empty').click(function () {
+                self.pos_widget.screen_selector.close_popup();
+            });
+        },
+
 
     });
 
