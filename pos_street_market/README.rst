@@ -6,18 +6,29 @@ Add some feature for users who sale in street
 
 Features
 --------
-* Add the possibility to change the date of a pos order, for users of a
-  specific new group;
 * Add a market place object;
-     * a PoS has now an extra field 'market_place_id' that mentions where
-       the sale has been done;
+    * a PoS has now an extra field 'market_place_id' that mentions where the
+      sale has been done;
+    * Possibility to select a Market place in Front Office or in Back Office;
 
+* Add the possibility to change the date of a pos order, for users of a
+  specific new group, because in some case, user will not have an odoo instance
+  during the sale, and will tip the PoS orders a few hours later or a a few
+  days later;
+
+
+Screenshots
+-----------
+* New popUp to select Market Place In PoS Front End
+  .. image:: ./static/description/screenshot_front_end_ui.png
+
+* Possibility to search or filter by market place
+  .. image:: ./static/description/screenshot_back_office_search.png
 
 Roadmap / Limits
 ----------------
-* For the time being, the market place can only be set in back office:
-  TO DO: develop in Front UI;
-* Could be great to have some reporting due to this information;
+* Could be great to have some graphical reporting like evolution of PoS sale
+  depending of market places;
 
 
 Bug Tracker
