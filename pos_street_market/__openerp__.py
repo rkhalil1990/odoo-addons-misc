@@ -33,9 +33,13 @@
         'security/ir_rule.xml',
         'security/res_groups.yml',
         'security/ir_model_access.yml',
+        'view/include.xml',
         'view/view.xml',
         'view/action.xml',
         'view/menu.xml',
+    ],
+    'qweb': [
+        'static/src/xml/pos_street_market.xml',
     ],
     'demo': [
         'demo/res_groups.yml',
