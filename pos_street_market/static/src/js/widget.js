@@ -20,6 +20,7 @@
 function load__pos_street_market__widget(instance) {
 
     module = instance.point_of_sale;
+    _t = instance.web._t;
 
 /* ****************************************************************************
 Overload: point_of_sale.PosWidget
@@ -64,17 +65,76 @@ Define : pos_street_market.SelectMarketPlacePopupWidget
     module.SelectMarketPlacePopupWidget = module.PopUpWidget.extend({
         template:'SelectMarketPlacePopupWidget',
 
-//        /* Overload Section */
+        /* Overload Section */
         start: function(){
             this._super();
             var self = this;
+
+            // Add List Screen Widget
+            this.market_place_list_screen_widget = new module.MarketPlaceListScreenWidget(this,{});
+            this.market_place_list_screen_widget.renderElement();
+            this.market_place_list_screen_widget.replace($('.placeholder-MarketPlaceListScreenWidget'));
+
             // Add On click behaviour to hide the PopUp
             this.$('#market-place-empty').click(function () {
+                self.pos.current_market_place_id = false;
+                self.pos_widget.$('#button_select_market_place')[0].innerHTML = _t('Market Place');
                 self.pos_widget.screen_selector.close_popup();
             });
         },
 
 
     });
+
+/* ****************************************************************************
+Define : pos_street_market.MarketPlaceListScreenWidget
+    
+- Display a list of market places;
+**************************************************************************** */
+    module.MarketPlaceListScreenWidget = module.ScreenWidget.extend({
+        template:'MarketPlaceListScreenWidget',
+
+        /* Overload Section */
+        start: function() {
+            this._super();
+            var self = this;
+
+            // Display Market Places list
+            var market_places = this.pos.db.market_places;
+            
+            for(var i = 0, len = market_places.length; i < len; i++){
+                var market_place_widget = new module.MarketPlaceWidget(this, {
+                    model: market_places[i],
+                });
+                market_place_widget.appendTo(this.$('.market-place-widget-list'));
+            }
+        },
+    });
+
+/* ****************************************************************************
+Define : pos_street_market.MarketPlaceWidget
+    
+- Display a market place;
+**************************************************************************** */
+    module.MarketPlaceWidget = module.PosBaseWidget.extend({
+        template: 'MarketPlaceWidget',
+
+        /* Overload Section */
+        init: function(parent, options) {
+            this._super(parent, options);
+            this.model = options.model;
+        },
+
+        renderElement: function() {
+            this._super();
+            var self = this;
+            $("a", this.$el).click(function(e){
+                self.pos.current_market_place_id = self.model.id;
+                self.pos_widget.$('#button_select_market_place')[0].innerHTML = self.model.code;
+                self.pos_widget.screen_selector.close_popup();
+            });
+        },
+    });
+
 
 }

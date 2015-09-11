@@ -29,15 +29,16 @@ Overload: point_of_sale.PosDB
 
     module.PosDB = module.PosDB.extend({
         init: function(options){
-            this.market_place_by_id = {};
+            this.current_market_place_id = false;
+            this.market_places = [];
             this._super(options);
         },
 
         add_market_places: function(market_places){
             for(var i=0 ; i < market_places.length; i++){
                 var attribute_value_ids = [];
-                // store Templates
-                this.market_place_by_id[market_places[i].id] = market_places[i];
+                // store Market Places
+                this.market_places.push(market_places[i]);
             }
         },
 
