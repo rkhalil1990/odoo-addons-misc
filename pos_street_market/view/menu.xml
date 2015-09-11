@@ -19,15 +19,9 @@
 <!-- ********************************************************************** -->
 <openerp>
     <data>
-        <menuitem id="menu_pos_street_market"
-            name="Street Market"
-            parent="point_of_sale.menu_point_root"
-            sequence="50"/>
-
         <menuitem id="menu_market_place"
             name="Market Places"
-            parent="menu_pos_street_market"
-            action="action_view_market_place_tree"
-            sequence="1"/>
+            parent="point_of_sale.menu_point_config_product"
+            action="action_market_place"/>
     </data>
 </openerp>

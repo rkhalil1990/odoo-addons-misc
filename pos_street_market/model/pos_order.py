@@ -20,18 +20,16 @@
 #
 ##############################################################################
 
-from openerp.osv import fields
-from openerp.osv.orm import Model
+from openerp import models, fields
 
 
-class pos_order(Model):
+class PosOrder(models.Model):
     _inherit = 'pos.order'
 
     # Columns section
-    _columns = {
-        # Overload 'date_order' column to make readonly to false
-        'date_order': fields.datetime(
-            'Order Date', readonly=False, select=True),
-        'market_place_id': fields.many2one(
-            'market.place', 'Market Place', help="Select the market place."),
-    }
+
+    market_place_id = fields.Many2one(
+        string='Market Place', comodel_name='market.place')
+
+    # Overload 'date_order' column to make readonly to false
+    date_order = fields.Datetime(readonly=False)

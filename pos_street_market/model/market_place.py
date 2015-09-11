@@ -20,26 +20,23 @@
 #
 ##############################################################################
 
-from openerp.osv.orm import Model
-from openerp.osv import fields
+from openerp import models, fields
 
 
-class market_place(Model):
-    _description = 'Market Places'
+class MarketPlace(models.Model):
     _name = 'market.place'
 
-    # Columns section
-    _columns = {
-        'name': fields.char('Name', size=128, required=True,),
-        'active': fields.boolean('Active',),
-        'company_id': fields.many2one(
-            'res.company', 'Company', required=True, readonly=True),
-    }
-
     # Default section
-    _defaults = {
-        'company_id': (
-            lambda s, cr, uid, c: s.pool.get('res.users')._get_company(
-                cr, uid, context=c)),
-        'active': True,
-    }
+    def _default_company_id(self):
+        return self.env.user.company_id.id
+
+    # Columns section
+    code = fields.Char(required=True, size=6)
+
+    name = fields.Char(required=True)
+
+    active = fields.Boolean(default=True)
+
+    company_id = fields.Many2one(
+        string='Company', comodel_name='res.company', required=True,
+        readonly=True, default=_default_company_id)
