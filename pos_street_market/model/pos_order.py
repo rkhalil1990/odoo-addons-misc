@@ -20,7 +20,7 @@
 #
 ##############################################################################
 
-from openerp import models, fields
+from openerp import models, api, fields
 
 
 class PosOrder(models.Model):
@@ -33,3 +33,9 @@ class PosOrder(models.Model):
 
     # Overload 'date_order' column to make readonly to false
     date_order = fields.Datetime(readonly=False)
+
+    @api.model
+    def _order_fields(self, ui_order):
+        res = super(PosOrder, self)._order_fields(ui_order)
+        res['market_place_id'] = ui_order['market_place_id'] or False
+        return res

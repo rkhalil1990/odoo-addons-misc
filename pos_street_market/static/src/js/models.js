@@ -44,5 +44,18 @@ Overload: point_of_sale.PosModel
 
         return _initialize_.call(this, session, attributes);
     };
+/* ****************************************************************************
+Overload: point_of_sale.Order
+
+- send to server the selected Market Place
+**************************************************************************** */
+
+    var _export_as_JSON_original = module.Order.prototype.export_as_JSON;
+
+    module.Order.prototype.export_as_JSON = function(){
+        res = _export_as_JSON_original.call(this);
+        res.market_place_id = this.pos.current_market_place_id;
+        return res;
+    };
 
 }
