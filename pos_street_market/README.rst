@@ -19,17 +19,16 @@ Screenshots
 -----------
 * New popUp to select Market Place In PoS Front End
 
-.. image:: /static/description/screenshot_front_end_ui.png
+.. image:: /pos_street_market/static/description/screenshot_front_end_ui.png
 
 * Possibility to search or filter by market place
 
-.. image:: /static/description/screenshot_back_office_search.png
+.. image:: /pos_street_market/static/description/screenshot_back_office_search.png
 
 Roadmap / Limits
 ----------------
 * Could be great to have some graphical reporting like evolution of PoS sale
   depending of market places;
-
 
 Bug Tracker
 ===========
