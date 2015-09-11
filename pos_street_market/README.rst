@@ -18,10 +18,10 @@ Features
 Screenshots
 -----------
 * New popUp to select Market Place In PoS Front End
-  .. image:: ./static/description/screenshot_front_end_ui.png
+  .. image:: /static/description/screenshot_front_end_ui.png
 
 * Possibility to search or filter by market place
-  .. image:: ./static/description/screenshot_back_office_search.png
+  .. image:: /static/description/screenshot_back_office_search.png
 
 Roadmap / Limits
 ----------------
