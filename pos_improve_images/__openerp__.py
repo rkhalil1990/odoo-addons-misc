@@ -23,40 +23,18 @@
 {
     'name': 'Point of Sale - Improve Images',
     'summary': 'Improvements on Display of products and categories images',
-    'version': '1.0',
+    'version': '8.0.2.0.0',
     'category': 'Point Of Sale',
-    'description': """
-Improvements on Display of products and categories images in Point of Sale
-==========================================================================
-
-Technical information:
-----------------------
-    * Increase speed:
-        * Products:
-            * Uses image_medium instead of image;
-            * Load image only if product has one;
-        * Categories:
-            * Uses image_medium instead of image (new field);
-    * Increase display:
-        * If product has no image, the display of the product is changed,
-          (Size of the name is increased for better visibility);
-
-Copyright, Authors and Licence:
--------------------------------
-    * Copyright: 2014, GRAP: Groupement Régional Alimentaire de Proximité;
-    * Author:
-        * Sylvain LE GAL (https://twitter.com/legalsylvain);
-    * Licence: AGPL-3 (http://www.gnu.org/licenses/);""",
     'author': 'GRAP',
     'website': 'http://www.grap.coop',
     'license': 'AGPL-3',
     'depends': [
         'point_of_sale',
     ],
+    'data': [
+        'view/include.xml',
+    ],
     'css': [
         'static/src/css/pii.css',
-    ],
-    'js': [
-        'static/src/js/pii.js',
     ],
 }

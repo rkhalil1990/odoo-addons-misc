@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <template id="assets_backend" name="pos_improve_images assets" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+<!--                 Custom JS -->
+                <script type="text/javascript" src="/pos_improve_images/static/src/js/pos_improve_images.js"></script>
+            </xpath>
+        </template>
+        <template id="index_pos_improve_images" name="POS Index Improve Images" inherit_id="point_of_sale.index">
+            <xpath expr="//head" position="inside">
+<!--                 Custom CSS -->
+                <link rel="stylesheet" href="/pos_improve_images/static/src/css/pos_improve_images.css"/>
+            </xpath>
+        </template>
+    </data>
+</openerp>

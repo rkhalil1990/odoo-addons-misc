@@ -2,7 +2,7 @@
 ##############################################################################
 #
 #    Point Of Sale - Improve Images module for OpenERP
-#    Copyright (C) 2014 GRAP (http://www.grap.coop)
+#    Copyright (C) 2014-Today GRAP (http://www.grap.coop)
 #    @author Julien WESTE
 #    @author Sylvain LE GAL (https://twitter.com/legalsylvain)
 #
@@ -21,20 +21,16 @@
 #
 ##############################################################################
 
-from openerp.osv import fields
-from openerp.osv.orm import Model
+from openerp import fields, models, api
 
 
-class product_product(Model):
-    _inherit = 'product.product'
+class ProductTemplate(models.Model):
+    _inherit = 'product.template'
 
-    def _get_has_image(self, cr, uid, ids, name, arg, context=None):
-        res = {}
-        for pp in self.browse(cr, uid, ids, context=context):
-            res[pp.id] = pp.image is not False
-        return res
+    has_image = fields.Boolean(
+        compute='_compute_has_image', string='Has Image', store=True)
 
-    _columns = {
-        'has_image': fields.function(
-            _get_has_image, type='boolean', string='Has Image'),
-    }
+    @api.depends('image')
+    def _compute_has_image(self):
+        for item in self:
+            item.has_image = (item.image is not False)
