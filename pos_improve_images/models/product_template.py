@@ -30,7 +30,7 @@ class ProductTemplate(models.Model):
     has_image = fields.Boolean(
         compute='_compute_has_image', string='Has Image', store=True)
 
-    @api.depends('image')
+    @api.depends('image_medium')
     def _compute_has_image(self):
         for item in self:
-            item.has_image = (item.image is not False)
+            item.has_image = not (item.image is None)

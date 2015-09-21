@@ -4,26 +4,23 @@
 Improvements on Display of products and categories images in Point of Sale
 ==========================================================================
 
-Technical information:
-----------------------
-    * Increase speed:
-        * Products:
-            * Uses image_medium instead of image;
-            * Load image only if product has one;
-        * Categories:
-            * Uses image_medium instead of image (new field);
-    * Increase display:
-        * If product has no image, the display of the product is changed,
-          (Size of the name is increased for better visibility);
+Products
+--------
+
+* Reduce loading duration, loading image only if product has one;
+* Improve display if product has no image;
+
+PoS Categories
+--------------
+
+* Improve display if category has no image and other categories has one;
+
 Screenshots
 -----------
-* Products and categories (without the module)
 
-#TODO .. image:: /pos_street_market/static/description/screenshot_front_end_ui.png
+Products and categories (without the module and with the module)
 
-* Product and categories (with the module)
-
-#TODO .. image:: /pos_street_market/static/description/screenshot_back_office_search.png
+.. image:: /pos_improve_images/static/description/screenshot_pos_without_with.png
 
 
 Credits

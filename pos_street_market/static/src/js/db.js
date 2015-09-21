@@ -43,5 +43,4 @@ Overload: point_of_sale.PosDB
         },
 
     });
-
 }

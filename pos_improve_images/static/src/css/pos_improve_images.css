@@ -18,18 +18,20 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ******************************************************************************/
 
-/* 
-    New display for 'product-img' and 'product-name' where there isn't image;
-*/
+.product-img-without-image img, .category-img-without-image img{
+    display: none;
+}
 
-/*.product-img-without-image{*/
-/*    height:25px !important;*/
-/*}*/
+.product-name-without-image{
+    bottom:auto !important;
+    top:15px !important;
+    font-size: 18px !important;
+    line-height: 18px !important;
+}
 
-/*.product-name-without-image{*/
-/*    bottom:auto !important;*/
-/*    top:25px !important;*/
-/*    padding-top:3px !important;*/
-/*    height:100px !important;*/
-/*    font-size: 16px !important;*/
-/*}*/
+.category-name-without-image{
+    bottom:auto !important;
+    top:5px !important;
+    font-size: 22px !important;
+    line-height: 22px !important;
+}
