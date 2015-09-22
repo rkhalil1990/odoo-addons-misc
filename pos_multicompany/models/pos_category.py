@@ -21,17 +21,23 @@
 #
 ##############################################################################
 
-from openerp import models, fields
+from openerp import models, fields, api
 
 
 class pos_category(models.Model):
     _inherit = 'pos.category'
 
-    # Custom Section
+    # Default Section
+    @api.model
+    def _default_company_id(self):
+        if self._context.get('module', False):
+            # Installation Context
+            return self.env['res.company']
+        else:
+            # Regular Context
+            return self.env.user.company_id.id
+
+    # Column Section
     company_id = fields.Many2one(
         comodel_name='res.company', string='Company',
-        default='_default_company_id')
-
-    # Default Section
-    def _default_company_id(self):
-        return self.user.company_id.id
+        default=_default_company_id)

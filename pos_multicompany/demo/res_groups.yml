@@ -2,8 +2,7 @@
 ##############################################################################
 #
 #    Point Of Sale - Multi Company Context module for Odoo
-#    Copyright (C) 2013-Today GRAP (http://www.grap.coop)
-#    @author Julien WESTE
+#    Copyright (C) 2015-Today GRAP (http://www.grap.coop)
 #    @author Sylvain LE GAL (https://twitter.com/legalsylvain)
 #
 #    This program is free software: you can redistribute it and/or modify
@@ -21,22 +20,6 @@
 #
 ##############################################################################
 
-{
-    'name': 'Point Of Sale - Multi Company Context',
-    'version': '8.0.2.0.0',
-    'summary': 'Change Point of Sale for Multi company context',
-    'category': 'Point of Sale',
-    'author': 'GRAP',
-    'website': 'http://www.grap.coop',
-    'license': 'AGPL-3',
-    'depends': [
-        'point_of_sale',
-    ],
-    'data': [
-        'security/ir_rule.yml',
-        'views/view.xml',
-    ],
-    'demo': [
-        'demo/res_groups.yml',
-    ],
-}
+- !record {model: res.groups, id: base.group_multi_company}:
+    users:
+        - base.user_root
