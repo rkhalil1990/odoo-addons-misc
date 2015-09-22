@@ -30,10 +30,15 @@ GRAP is using Odoo since 2012 and contributes to
 
 Pending Pull Request to OCA
 ---------------------------
+
 * 15/06/2015 : account-fiscal-rule: [product_taxes_group / account_product_fiscal_classification](https://github.com/OCA/account-fiscal-rule/pull/24)
-* 31/08/2015 : account-invoicing: [account_invoice_pricelist](https://github.com/OCA/account-invoicing/pull/99)
-* xx/xx/xxxx : pos: [pos_change_payment]
-* xx/xx/xxxx : pos: [pos_invoicing]
 * 31/08/2015 : pos: [pos_slate] (https://github.com/OCA/pos/pull/49)
-* xx/xx/xxxx : product-attribute: [product_standard_price_vat_incl]
+* 22/09/2015 : pos: [pos_change_payment] (https://github.com/OCA/pos/pull/54)
+* xx/xx/xxxx : pos: [pos_invoicing]
+
+* 09/09/2015 : product-attribute: [product_standard_price_vat_incl] (https://github.com/OCA/product-attribute/pull/95)
+
+Pending Work
+------------
+* pos_restaurant is not fully ported. Only backOffice is ported;
 
