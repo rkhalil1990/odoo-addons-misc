@@ -91,6 +91,8 @@ class PosCoversReport(models.Model):
                         SUM(po.covers) as covers_total
                     FROM
                         pos_order as po
+                    WHERE
+                        po.state not in ('cancel', 'draft')
                     GROUP BY
                         company_id,
                         floor_id,
