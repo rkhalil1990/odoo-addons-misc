@@ -1,0 +1,379 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* pos_restaurant_extra
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-09-23 07:48+0000\n"
+"PO-Revision-Date: 2015-09-23 07:48+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: pos_restaurant_extra
+#: field:restaurant.table,active:0
+msgid "Active"
+msgstr "Active"
+
+#. module: pos_restaurant_extra
+#: help:restaurant.table,active:0
+msgid "By unchecking the active field you can disable a table without deleting it."
+msgstr "En décochant cette case, vous pouvez désactiver une table sans la supprimer."
+
+#. module: pos_restaurant_extra
+#. openerp-web
+#: code:addons/pos_restaurant_extra/static/src/xml/pr.xml:42
+#: code:addons/pos_restaurant_extra/static/src/xml/pr.xml:99
+#, python-format
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: pos_restaurant_extra
+#: view:pos.covers.report:pos_restaurant_extra.view_pos_covers_report_search
+#: field:pos.covers.report,company_id:0
+#: field:restaurant.table,company_id:0
+msgid "Company"
+msgstr "Société"
+
+#. module: pos_restaurant_extra
+#. openerp-web
+#: code:addons/pos_restaurant_extra/static/src/js/pr.js:51
+#, python-format
+msgid "Covers"
+msgstr "Couverts"
+
+#. module: pos_restaurant_extra
+#: model:ir.actions.act_window,name:pos_restaurant_extra.action_pos_covers_date_report
+#: model:ir.ui.menu,name:pos_restaurant_extra.menu_pos_covers_date_report
+msgid "Covers / Date"
+msgstr "Couverts / Date"
+
+#. module: pos_restaurant_extra
+#: view:board.board:pos_restaurant_extra.view_pos_covers_report_agregate
+#: model:ir.actions.act_window,name:pos_restaurant_extra.action_pos_covers_date_report_30_days
+msgid "Covers / Day (Last 30 Days)"
+msgstr "Couverts / Jour (30 derniers jours)"
+
+#. module: pos_restaurant_extra
+#: model:ir.actions.act_window,name:pos_restaurant_extra.action_pos_covers_month_report
+#: model:ir.ui.menu,name:pos_restaurant_extra.menu_pos_covers_month_date_report
+msgid "Covers / Month"
+msgstr "Couverts / Mois"
+
+#. module: pos_restaurant_extra
+#: view:board.board:pos_restaurant_extra.view_pos_covers_report_agregate
+#: model:ir.actions.act_window,name:pos_restaurant_extra.action_pos_covers_month_report_6_months
+msgid "Covers / Month (Last 6 Months)"
+msgstr "Couverts / Mois (6 derniers mois)"
+
+#. module: pos_restaurant_extra
+#: view:board.board:pos_restaurant_extra.view_pos_covers_report_agregate
+#: model:ir.ui.menu,name:pos_restaurant_extra.menu_pos_covers_report_agregate
+msgid "Covers / Overview"
+msgstr "Couverts / Vue générale"
+
+#. module: pos_restaurant_extra
+#: model:ir.actions.act_window,name:pos_restaurant_extra.action_pos_covers_week_report
+#: model:ir.ui.menu,name:pos_restaurant_extra.menu_pos_covers_week_date_report
+msgid "Covers / Week"
+msgstr "Couverts / Semaine"
+
+#. module: pos_restaurant_extra
+#: view:board.board:pos_restaurant_extra.view_pos_covers_report_agregate
+#: model:ir.actions.act_window,name:pos_restaurant_extra.action_pos_covers_week_report_12_weeks
+msgid "Covers / Week (Last 12 Weeks)"
+msgstr "Couverts / Semaine (12 dernières semaines)"
+
+#. module: pos_restaurant_extra
+#: model:ir.actions.act_window,name:pos_restaurant_extra.action_pos_covers_week_day_report
+#: model:ir.ui.menu,name:pos_restaurant_extra.menu_pos_covers_week_day_report
+msgid "Covers / Week Day"
+msgstr "Couverts / Jour de semaine"
+
+#. module: pos_restaurant_extra
+#. openerp-web
+#: code:addons/pos_restaurant_extra/static/src/xml/pr.xml:39
+#, python-format
+msgid "Covers Quantity Selection"
+msgstr "Sélection de la quantité de couverts"
+
+#. module: pos_restaurant_extra
+#: field:pos.covers.report,covers_total:0
+msgid "Covers Total"
+msgstr "Total Couverts"
+
+#. module: pos_restaurant_extra
+#: field:restaurant.floor,create_uid:0
+#: field:restaurant.table,create_uid:0
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: pos_restaurant_extra
+#: field:restaurant.floor,create_date:0
+#: field:restaurant.table,create_date:0
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: pos_restaurant_extra
+#: field:pos.covers.report,date:0
+msgid "Date"
+msgstr "Date"
+
+#. module: pos_restaurant_extra
+#: view:pos.covers.report:pos_restaurant_extra.view_pos_covers_report_search
+msgid "Day"
+msgstr "Jour"
+
+#. module: pos_restaurant_extra
+#: field:pos.covers.report,date_txt:0
+msgid "Day (Text Format)"
+msgstr "Jour (au format texte)"
+
+#. module: pos_restaurant_extra
+#. openerp-web
+#: code:addons/pos_restaurant_extra/static/src/js/pr.js:182
+#, python-format
+msgid "Del."
+msgstr "Suppr."
+
+#. module: pos_restaurant_extra
+#: model:ir.actions.act_window,help:pos_restaurant_extra.action_restaurant_floor
+msgid "Display and manage floors in restaurant."
+msgstr "Afficher et gérer les étages du restaurant."
+
+#. module: pos_restaurant_extra
+#: model:ir.actions.act_window,help:pos_restaurant_extra.action_restaurant_table
+msgid "Display and manage tables in restaurant."
+msgstr "Afficher et gérer les tables du restaurant."
+
+#. module: pos_restaurant_extra
+#: view:pos.covers.report:pos_restaurant_extra.view_pos_covers_report_search
+#: field:pos.covers.report,floor_id:0
+#: field:pos.order,floor_id:0
+#: field:restaurant.table,floor_id:0
+msgid "Floor"
+msgstr "Etage"
+
+#. module: pos_restaurant_extra
+#: model:ir.actions.act_window,name:pos_restaurant_extra.action_restaurant_floor
+#: model:ir.ui.menu,name:pos_restaurant_extra.menu_table
+#: field:pos.config,floor_ids:0
+msgid "Floors"
+msgstr "Etages"
+
+#. module: pos_restaurant_extra
+#: code:addons/pos_restaurant_extra/models/pos_covers_report.py:37
+#: selection:pos.covers.report,week_day:0
+#, python-format
+msgid "Friday"
+msgstr "Vendredi"
+
+#. module: pos_restaurant_extra
+#: view:pos.covers.report:pos_restaurant_extra.view_pos_covers_report_search
+msgid "Group By..."
+msgstr "Regrouper par ..."
+
+#. module: pos_restaurant_extra
+#: field:pos.covers.report,id:0
+#: field:restaurant.floor,id:0
+#: field:restaurant.table,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: pos_restaurant_extra
+#: field:restaurant.table,image:0
+msgid "Image"
+msgstr "Image"
+
+#. module: pos_restaurant_extra
+#: field:restaurant.floor,write_uid:0
+#: field:restaurant.table,write_uid:0
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: pos_restaurant_extra
+#: field:restaurant.floor,write_date:0
+#: field:restaurant.table,write_date:0
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: pos_restaurant_extra
+#: model:res.groups,name:pos_restaurant_extra.res_group_restaurant_manager
+msgid "Manager"
+msgstr "Responsable"
+
+#. module: pos_restaurant_extra
+#: field:pos.config,max_covers:0
+msgid "Max Covers"
+msgstr "Couverts maximum"
+
+#. module: pos_restaurant_extra
+#: code:addons/pos_restaurant_extra/models/pos_covers_report.py:33
+#: selection:pos.covers.report,week_day:0
+#, python-format
+msgid "Monday"
+msgstr "Lundi"
+
+#. module: pos_restaurant_extra
+#: view:pos.covers.report:pos_restaurant_extra.view_pos_covers_report_search
+msgid "Month"
+msgstr "Mois"
+
+#. module: pos_restaurant_extra
+#: field:pos.covers.report,month_date:0
+msgid "Month (Date Format)"
+msgstr "Mois (au format date)"
+
+#. module: pos_restaurant_extra
+#: field:pos.covers.report,month_txt:0
+msgid "Month (Text Format)"
+msgstr "Mois (au format texte)"
+
+#. module: pos_restaurant_extra
+#: field:restaurant.floor,name:0
+#: field:restaurant.table,name:0
+msgid "Name"
+msgstr "Nom"
+
+#. module: pos_restaurant_extra
+#: field:pos.order,covers:0
+msgid "Number of Covers"
+msgstr "Nombre de couverts"
+
+#. module: pos_restaurant_extra
+#: model:ir.model,name:pos_restaurant_extra.model_pos_order
+msgid "Point of Sale"
+msgstr "Point de Vente"
+
+#. module: pos_restaurant_extra
+#: model:ir.module.category,name:pos_restaurant_extra.ir_module_category_restaurant
+#: model:ir.ui.menu,name:pos_restaurant_extra.menu_pos_restaurant
+#: model:ir.ui.menu,name:pos_restaurant_extra.menu_pos_restaurant_dashboard
+msgid "Restaurant"
+msgstr "Restaurant"
+
+#. module: pos_restaurant_extra
+#: code:addons/pos_restaurant_extra/models/pos_covers_report.py:38
+#: selection:pos.covers.report,week_day:0
+#, python-format
+msgid "Saturday"
+msgstr "Samedi"
+
+#. module: pos_restaurant_extra
+#: model:ir.module.category,description:pos_restaurant_extra.ir_module_category_restaurant
+msgid "Select the level of access of restaurant informations in Point Of Sale"
+msgstr "Sélectionner le niveau d'accès aux informations liées au restaurant dans le point de vente"
+
+#. module: pos_restaurant_extra
+#: code:addons/pos_restaurant_extra/models/pos_covers_report.py:39
+#: selection:pos.covers.report,week_day:0
+#, python-format
+msgid "Sunday"
+msgstr "Dimanche"
+
+#. module: pos_restaurant_extra
+#. openerp-web
+#: code:addons/pos_restaurant_extra/static/src/js/pr.js:171
+#: field:pos.order,table_id:0
+#, python-format
+msgid "Table"
+msgstr "Table"
+
+#. module: pos_restaurant_extra
+#. openerp-web
+#: code:addons/pos_restaurant_extra/static/src/xml/pr.xml:96
+#, python-format
+msgid "Table Selection"
+msgstr "Sélection de table"
+
+#. module: pos_restaurant_extra
+#: sql_constraint:restaurant.table:0
+msgid "Table name must be unique by Floor!"
+msgstr "Le nom de la table doit être unique par étage !"
+
+#. module: pos_restaurant_extra
+#: model:ir.actions.act_window,name:pos_restaurant_extra.action_restaurant_table
+#: model:ir.ui.menu,name:pos_restaurant_extra.menu_floor
+#: field:restaurant.floor,table_ids:0
+msgid "Tables"
+msgstr "Tables"
+
+#. module: pos_restaurant_extra
+#: model:res.groups,comment:pos_restaurant_extra.res_group_restaurant_manager
+msgid "The user can see and manage Restaurant fields. (Covers, Table, etc.)"
+msgstr "L'utilisateur peut voir et gérer les informations liées au restaurant. (Couverts, tables, ...)"
+
+#. module: pos_restaurant_extra
+#: model:res.groups,comment:pos_restaurant_extra.res_group_restaurant_user
+msgid "The user can see and use Restaurant fields. (Covers, Table, etc.)"
+msgstr "L'utilisateur peut voir et utiliser les informations liées au restaurant. (Couverts, tables, ...)"
+
+#. module: pos_restaurant_extra
+#: help:pos.config,max_covers:0
+msgid "This is the number of buttons displayed in the front-end point of sale."
+msgstr "Nombre de bouttons affichée dans le point de vente tactile."
+
+#. module: pos_restaurant_extra
+#: code:addons/pos_restaurant_extra/models/pos_covers_report.py:36
+#: selection:pos.covers.report,week_day:0
+#, python-format
+msgid "Thursday"
+msgstr "Jeudi"
+
+#. module: pos_restaurant_extra
+#: view:pos.covers.report:pos_restaurant_extra.view_pos_covers_report_tree
+msgid "Total"
+msgstr "Total"
+
+#. module: pos_restaurant_extra
+#: code:addons/pos_restaurant_extra/models/pos_covers_report.py:34
+#: selection:pos.covers.report,week_day:0
+#, python-format
+msgid "Tuesday"
+msgstr "Mardi"
+
+#. module: pos_restaurant_extra
+#: view:pos.covers.report:pos_restaurant_extra.view_pos_covers_report_search
+#: field:pos.covers.report,user_id:0
+#: model:res.groups,name:pos_restaurant_extra.res_group_restaurant_user
+msgid "User"
+msgstr "Utilisateur"
+
+#. module: pos_restaurant_extra
+#: code:addons/pos_restaurant_extra/models/pos_covers_report.py:35
+#: selection:pos.covers.report,week_day:0
+#, python-format
+msgid "Wednesday"
+msgstr "Mercredi"
+
+#. module: pos_restaurant_extra
+#: view:pos.covers.report:pos_restaurant_extra.view_pos_covers_report_search
+msgid "Week"
+msgstr "Semaine"
+
+#. module: pos_restaurant_extra
+#: field:pos.covers.report,week_date:0
+msgid "Week (Date Format)"
+msgstr "Semaine (Au format date)"
+
+#. module: pos_restaurant_extra
+#: field:pos.covers.report,week_txt:0
+msgid "Week (Text Format)"
+msgstr "Semaine (Au format texte)"
+
+#. module: pos_restaurant_extra
+#: view:pos.covers.report:pos_restaurant_extra.view_pos_covers_report_search
+#: field:pos.covers.report,week_day:0
+msgid "Week Day"
+msgstr "Jour de la semaine"
+
+#. module: pos_restaurant_extra
+#: view:board.board:pos_restaurant_extra.view_pos_covers_report_agregate
+#: model:ir.actions.act_window,name:pos_restaurant_extra.action_pos_covers_week_day_report_6_months
+msgid "Weekly distribution (Last 6 Months)"
+msgstr "Distribution hebdomadaire (Dernier 6 mois)"
