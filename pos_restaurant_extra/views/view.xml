@@ -167,9 +167,9 @@
         <field name="model">pos.covers.report</field>
         <field name="arch" type="xml">
             <search>
-                <filter name="user_id" string="User" />
-                <filter name="floor_id" string="Floor" />
-                <filter name="company_id" string="Company" groups="base.group_multi_company"/>
+                <field name="user_id" string="User" />
+                <field name="floor_id" string="Floor" />
+                <field name="company_id" string="Company" groups="base.group_multi_company"/>
                 <group expand="0" string="Group By...">
                     <filter name="group_by_company_id" string="Company" context="{'group_by':'company_id'}" groups="base.group_multi_company" />
                     <filter name="group_by_floor_id" string="Floor" context="{'group_by':'floor_id'}"/>
@@ -191,10 +191,10 @@
                 <field name="company_id" groups="base.group_multi_company"/>
                 <field name="floor_id"/>
                 <field name="user_id"/>
-                <field name="date_txt"/>
-                <field name="week_txt"/>
-                <field name="month_txt"/>
                 <field name="week_day"/>
+                <field name="date"/>
+                <field name="week_date"/>
+                <field name="month_date"/>
                 <field name="covers_total" sum="Total"/>
             </tree>
         </field>
