@@ -174,11 +174,7 @@
                     <filter name="group_by_company_id" string="Company" context="{'group_by':'company_id'}" groups="base.group_multi_company" />
                     <filter name="group_by_floor_id" string="Floor" context="{'group_by':'floor_id'}"/>
                     <filter name="group_by_user_id" string="User" context="{'group_by':'user_id'}"/>
-                    <filter name="group_by_date_txt" string="Date" context="{'group_by':'date_txt'}"/>
-                    <filter name="group_by_week_txt" string="Week" context="{'group_by':'week_txt'}"/>
-                    <filter name="group_by_month_txt" string="Month" context="{'group_by':'month_txt'}"/>
-                    <filter name="group_by_week_day" string="Week Day" context="{'group_by':'week_day'}"/>
-
+                    <filter name="group_by_date" string="Date" context="{'group_by':'date'}"/>
                 </group>
             </search>
         </field>
@@ -193,8 +189,6 @@
                 <field name="user_id"/>
                 <field name="week_day"/>
                 <field name="date"/>
-                <field name="week_date"/>
-                <field name="month_date"/>
                 <field name="covers_total" sum="Total"/>
             </tree>
         </field>
@@ -204,7 +198,7 @@
          <field name="model">pos.covers.report</field>
          <field name="arch" type="xml">
                 <graph type="bar">
-                    <field name="date_txt"/>
+                    <field name="date" interval="day"/>
                     <field name="covers_total" operator="+"/>
                 </graph>
          </field>
@@ -214,7 +208,7 @@
          <field name="model">pos.covers.report</field>
          <field name="arch" type="xml">
                 <graph type="bar">
-                    <field name="week_txt"/>
+                    <field name="date" interval="week"/>
                     <field name="covers_total" operator="+"/>
                 </graph>
          </field>
@@ -224,7 +218,7 @@
          <field name="model">pos.covers.report</field>
          <field name="arch" type="xml">
                 <graph type="bar">
-                    <field name="month_txt"/>
+                    <field name="date" interval="month"/>
                     <field name="covers_total" operator="+"/>
                 </graph>
          </field>

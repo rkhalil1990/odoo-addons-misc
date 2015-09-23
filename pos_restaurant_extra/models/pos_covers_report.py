@@ -51,12 +51,6 @@ class PosCoversReport(models.Model):
 
     month_date = fields.Datetime(string='Month (Date Format)')
 
-    date_txt = fields.Char(string='Day (Text Format)')
-
-    week_txt = fields.Char(string='Week (Text Format)')
-
-    month_txt = fields.Char(string='Month (Text Format)')
-
     week_day = fields.Selection(string='Week Day', selection=_WEEK_DAY)
 
     covers_total = fields.Integer(string='Covers Total')
@@ -73,9 +67,6 @@ class PosCoversReport(models.Model):
                     req.date as date,
                     DATE_TRUNC('week',req.date) as week_date,
                     DATE_TRUNC('month',req.date) as month_date,
-                    req.date as date_txt,
-                    DATE_TRUNC('week',req.date) as week_txt,
-                    DATE_TRUNC('month',req.date) as month_txt,
                     CASE
                         WHEN extract(dow from req.date) = 0 THEN 7
                         ELSE extract(dow from req.date)
