@@ -2,7 +2,7 @@
 ##############################################################################
 #
 #    Point of Sale - Reporting for Odoo
-#    Copyright (C) 2013-2014 GRAP (http://www.grap.coop)
+#    Copyright (C) 2013-Today GRAP (http://www.grap.coop)
 #    @author Sylvain LE GAL (https://twitter.com/legalsylvain)
 #
 #    This program is free software: you can redistribute it and/or modify
@@ -20,26 +20,27 @@
 #
 ##############################################################################
 
-from openerp.osv.orm import Model
-from openerp.osv import fields
-from openerp import tools
+from openerp import models, fields, tools
 
 
-class pos_payment_type_report(Model):
+class PosPaymentTypeReport(models.Model):
     _name = 'pos.payment.type.report'
     _auto = False
     _table = 'pos_payment_type_report'
 
-    _columns = {
-        'company_id': fields.many2one(
-            'res.company', 'Company', readonly=True),
-        'journal_id': fields.many2one(
-            'account.journal', 'Journal', readonly=True),
-        'month': fields.date('Month', size=7, readonly=True),
-        'total': fields.float('Total', readonly=True),
-        'average': fields.float('Average', readonly=True),
-        'quantity': fields.integer('Quantity', readonly=True),
-    }
+    company_id = fields.Many2one(
+        comodel_name='res.company', string='Company')
+
+    journal_id = fields.Many2one(
+        comodel_name='account.journal', string='Journal')
+
+    month = fields.Datetime('Month')
+#    size=7, readonly=True
+    total = fields.Float(string='Total (Taxes Included)')
+
+    average = fields.Float(string='Average (Taxes Included)')
+
+    quantity = fields.Integer(string='Quantity')
 
     def init(self, cr):
         tools.drop_view_if_exists(cr, self._table)
@@ -57,7 +58,7 @@ class pos_payment_type_report(Model):
                     SELECT
                         absl.id,
                         absl.journal_id,
-                        absl.type,
+                        absl.pos_statement_id,
                         absl.date,
                         absl.company_id,
                         absl.amount,
@@ -68,7 +69,7 @@ class pos_payment_type_report(Model):
                     ON aj.id = absl.journal_id
                 WHERE
                     absl.journal_id IS NOT NULL
-                    AND absl.type = 'customer'
+                    AND absl.pos_statement_id IS NOT NULL
                 GROUP BY
                     absl.company_id,
                     absl.journal_id,

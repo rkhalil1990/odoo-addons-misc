@@ -2,7 +2,7 @@
 ##############################################################################
 #
 #    Point of Sale - Reporting for Odoo
-#    Copyright (C) 2013-2014 GRAP (http://www.grap.coop)
+#    Copyright (C) 2013-Today GRAP (http://www.grap.coop)
 #    @author Julien WESTE
 #    @author Sylvain LE GAL (https://twitter.com/legalsylvain)
 #
@@ -33,7 +33,7 @@ class pos_daily_simple_report(Model):
 
     _columns = {
         'date': fields.date('Date'),
-        'date_string': fields.char('Date', size=64, required=True),
+        'date_char': fields.char('Date', size=64, required=True),
         'company_id': fields.many2one('res.company', 'Company', required=True),
         'amount_tax_excluded': fields.float('Net Sales', digits=(12, 2)),
         'nb_orders': fields.integer('Nb of orders'),
@@ -47,7 +47,7 @@ class pos_daily_simple_report(Model):
                 SELECT
                     a.id,
                     a.date,
-                    a.date_string,
+                    a.date_char,
                     a.company_id,
                     b.amount_tax_excluded,
                     a.nb_orders,
@@ -57,7 +57,7 @@ class pos_daily_simple_report(Model):
                     SELECT
                         min(id) as id,
                         date_trunc('day',date_order) as date,
-                        to_char(date_order,'YY/MM/DD Dy') as date_string,
+                        to_char(date_order,'YY/MM/DD Dy') as date_char,
                         company_id AS company_id,
                         count(*) as nb_orders
                     FROM
@@ -68,7 +68,7 @@ class pos_daily_simple_report(Model):
                     GROUP BY
                         company_id,
                         date,
-                        date_string
+                        date_char
                     ) as a
                 INNER JOIN
                     (

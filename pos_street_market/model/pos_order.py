@@ -37,5 +37,5 @@ class PosOrder(models.Model):
     @api.model
     def _order_fields(self, ui_order):
         res = super(PosOrder, self)._order_fields(ui_order)
-        res['market_place_id'] = ui_order['market_place_id'] or False
+        res['market_place_id'] = ui_order.get('market_place_id', False)
         return res

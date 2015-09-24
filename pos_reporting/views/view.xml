@@ -25,7 +25,7 @@
             <field name="model">pos.daily.simple.report</field>
             <field name="arch" type="xml">
                 <graph string="Net Sales by Days (VAT Excl)" type="bar">
-                    <field name="date_string"/>
+                    <field name="date_char"/>
                     <field name="amount_tax_excluded" operator="+"/>
                 </graph>
             </field>
@@ -34,7 +34,7 @@
             <field name="model">pos.daily.simple.report</field>
             <field name="arch" type="xml">
                 <graph string="Number of Sales by Days" type="bar">
-                    <field name="date_string"/>
+                    <field name="date_char"/>
                     <field name="nb_orders" operator="+"/>
                 </graph>
             </field>
@@ -43,7 +43,7 @@
             <field name="model">pos.daily.simple.report</field>
             <field name="arch" type="xml">
                 <graph string="Average Sale by Days (VAT Excl)" type="bar">
-                    <field name="date_string"/>
+                    <field name="date_char"/>
                     <field name="avg_amount" operator="+"/>
                 </graph>
             </field>
@@ -55,7 +55,7 @@
             <field name="model">pos.daily.report</field>
             <field name="arch" type="xml">
                 <graph string="Net Sales by Day (VAT Excl)" type="bar">
-                    <field name="date_string"/>
+                    <field name="date_char"/>
                     <field name="amount_tax_excluded" operator="+"/>
                 </graph>
             </field>
@@ -100,16 +100,15 @@
     </record>
 
     <record id="view_pos_payment_type_report_tree" model="ir.ui.view">
-        <field eval="1" name="priority"/>
         <field name="model">pos.payment.type.report</field>
         <field name="arch" type="xml">
-            <tree string="Payment Analysis" create="false">
-                <field name="company_id" groups="base.group_multi_company"/>
-                <field name="journal_id"/>
+            <tree string="Payment Analysis">
                 <field name="month"/>
+                <field name="journal_id"/>
                 <field name="quantity" sum="# of Lines"/>
                 <field name="average"/>
                 <field name="total" sum="Total"/>
+                <field name="company_id" groups="base.group_multi_company"/>
             </tree>
         </field>
     </record>

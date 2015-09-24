@@ -2,7 +2,7 @@
 ##############################################################################
 #
 #    Point of Sale - Reporting for Odoo
-#    Copyright (C) 2013-2014 GRAP (http://www.grap.coop)
+#    Copyright (C) 2013-Today GRAP (http://www.grap.coop)
 #    @author Julien WESTE
 #    @author Sylvain LE GAL (https://twitter.com/legalsylvain)
 #
@@ -21,22 +21,23 @@
 #
 ##############################################################################
 
-from openerp.osv.orm import Model
-from openerp.osv import fields
-from openerp import tools
+from openerp import models, fields, tools
+from openerp.addons import decimal_precision as dp
 
 
-class pos_daily_report(Model):
+class PosDailyReport(models.Model):
     _name = 'pos.daily.report'
     _auto = False
     _table = 'pos_daily_report'
 
-    _columns = {
-        'date': fields.date('Date'),
-        'date_string': fields.char('Date', size=64, required=True),
-        'company_id': fields.many2one('res.company', 'Company', required=True),
-        'amount_tax_excluded': fields.float('Net Sales', digits=(12, 2)),
-    }
+    date = fields.Date(string='Date')
+
+    date_char = fields.Char(string='Date (Text Format)')
+
+    company_id = fields.Many2one(comodel_name='res.company', string='Company')
+
+    amount_tax_excluded = fields.Float(
+        string='Net Sales', digits=dp.get_precision('Product Price'))
 
     def init(self, cr):
         tools.drop_view_if_exists(cr, self._table)
@@ -44,10 +45,10 @@ class pos_daily_report(Model):
             create or replace view %s as (
                     SELECT
                         min(po.id) as id,
-                        to_char(po.date_order,'YY/MM/DD Dy') as date_string,
+                        to_char(po.date_order,'YY/MM/DD Dy') as date_char,
                         date_trunc('day',po.date_order) as date,
                         po.company_id AS company_id,
-                        round(sum(pol.price_subtotal),2) as amount_tax_excluded
+                        sum(pol.price_subtotal) as amount_tax_excluded
                     FROM
                         pos_order po
                         INNER JOIN pos_order_line pol
@@ -58,5 +59,8 @@ class pos_daily_report(Model):
                     GROUP BY
                         po.company_id,
                         date,
-                        date_string
+                        date_char
         )""" % (self._table))
+        
+
+#                        round(sum(pol.price_subtotal),2) as amount_tax_excluded

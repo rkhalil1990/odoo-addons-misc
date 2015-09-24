@@ -2,7 +2,7 @@
 ##############################################################################
 #
 #    Point of Sale - Reporting for Odoo
-#    Copyright (C) 2013-2014 GRAP (http://www.grap.coop)
+#    Copyright (C) 2013-Today GRAP (http://www.grap.coop)
 #    @author Julien WESTE
 #    @author Sylvain LE GAL (https://twitter.com/legalsylvain)
 #
@@ -22,20 +22,10 @@
 ##############################################################################
 
 {
-    'name': 'Point of Sale Reporting',
+    'name': 'Point of Sale - Reporting',
     'version': '3.0',
+    'summary': "Adds Dashboards showing the PoS Sales with a bar graph",
     'category': 'Point of Sale',
-    'description': """
-Adds dashboard showing the sales with a bar graph
-=================================================
-
-Copyright, Authors and Licence:
--------------------------------
-    * Copyright: 2014, GRAP: Groupement Régional Alimentaire de Proximité;
-    * Author:
-        * Julien WESTE;
-        * Sylvain LE GAL (https://twitter.com/legalsylvain);
-    * Licence: AGPL-3 (http://www.gnu.org/licenses/);""",
     'author': 'GRAP',
     'website': 'http://www.grap.coop',
     'license': 'AGPL-3',
@@ -43,11 +33,11 @@ Copyright, Authors and Licence:
         'point_of_sale',
     ],
     'data': [
-        'view/view.xml',
-        'view/action.xml',
-        'view/view2.xml',
-        'view/action2.xml',
-        'view/menu.xml',
+        'views/view.xml',
+        'views/action.xml',
+        'views/view2.xml',
+        'views/action2.xml',
+        'views/menu.xml',
         'security/ir_model_access.yml',
         'security/ir_rule.xml',
     ],
