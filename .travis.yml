@@ -31,6 +31,7 @@ install:
   - ln -s server_environment_files_sample ./server_environment_files
 
     # Custom Lines
+  - git clone https://github.com/OCA/account-invoicing.git -b 8.0 ${HOME}/account-invoicing
 
 script:
   - travis_run_tests
