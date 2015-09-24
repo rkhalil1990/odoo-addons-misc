@@ -61,6 +61,3 @@ class PosDailyReport(models.Model):
                         date,
                         date_char
         )""" % (self._table))
-        
-
-#                        round(sum(pol.price_subtotal),2) as amount_tax_excluded
