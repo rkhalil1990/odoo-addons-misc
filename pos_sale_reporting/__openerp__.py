@@ -2,7 +2,7 @@
 ##############################################################################
 #
 #    Sale / Point Of Sale Report module for OpenERP
-#    Copyright (C) 2014 GRAP (http://www.grap.coop)
+#    Copyright (C) 2014-Today GRAP (http://www.grap.coop)
 #    @author Julien WESTE
 #    @author Sylvain LE GAL (https://twitter.com/legalsylvain)
 #
@@ -21,4 +21,25 @@
 #
 ##############################################################################
 
-from . import model
+{
+    'name': 'Point Of Sale & Sale - Reporting',
+    'summary': "Add reports merging 'Sale' and 'Point of Sale' Datas",
+    'version': '8.0.3.0.0',
+    'category': 'Point of Sale',
+    'author': 'GRAP',
+    'website': 'http://www.grap.coop',
+    'license': 'AGPL-3',
+    'depends': [
+        'sale',
+        'point_of_sale',
+        'account_invoice_pricelist',
+    ],
+    'data': [
+        'data/ir_cron.xml',
+        'security/ir_model_access.yml',
+        'security/ir_rule.xml',
+        'views/view.xml',
+        'views/action.xml',
+        'views/menu.xml',
+    ],
+}
